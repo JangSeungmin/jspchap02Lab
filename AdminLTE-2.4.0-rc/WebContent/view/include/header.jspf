@@ -394,6 +394,8 @@
 						</span>
 					</a>
 						<ul class="treeview-menu">
+							<li><a href="../examples/list.jsp"><i class="fa fa-circle-o"></i> 
+									방명록</a></li>
 							<li><a href="../examples/blank.jsp"><i
 									class="fa fa-circle-o"></i> Blank</a></li>
 							<li><a href="../examples/boardDonga.jsp"><i
