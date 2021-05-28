@@ -19,7 +19,7 @@
 		PreparedStatement pstmt = null;
 	
 		try {
-			String jdbcDriver = "jdbc:mysql://localhost:3306/chap14?" +
+			String jdbcDriver = "jdbc:mysql://localhost:3306/board?" +
 								"useUnicode=true&characterEncoding=utf8&serverTimezone=UTC";
 			String dbUser = "jspexam";
 			String dbPass = "jsppw";

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +30,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition register-page">
+
+
 <div class="register-box">
   <div class="register-logo">
     <a href="../main/index.jsp"><b>Admin</b>LTE</a>
@@ -37,21 +40,36 @@
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form action="registProcess.jsp" method="post">
+   <!--  <form action="registProcess.jsp" method="post"> -->
+
+	<p>
+	
+	<c:if test="${errors.id}">ID를 입력하세요.</c:if>
+	<c:if test="${errors.name}">이름을 입력하세요.</c:if>
+	
+	<c:if test="${errors.password}">암호를 입력하세요.</c:if>
+	
+	<c:if test="${errors.confirmPassword}">확인을 입력하세요.</c:if>
+	<c:if test="${errors.notMatch}">암호와 확인이 일치하지 않습니다.</c:if>
+	
+	</p>
+<!-- mvc시작 -->
+<form action="join.do" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Full name" name="name">
+        <input type="text" class="form-control" placeholder="Full name" name="name" value="${param.name}">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email" name="email">
+        <input type="text" class="form-control" placeholder="Email" name="email" value="${param.id}">
+       
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" name="pwd">
+        <input type="password" class="form-control" placeholder="Password" name="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Retype password" name="pwdchk">
+        <input type="password" class="form-control" placeholder="Retype password" name="confirmPassword">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">
@@ -68,7 +86,7 @@
         </div>
         <!-- /.col -->
       </div>
-    </form>
+ </form>
 
     <div class="social-auth-links text-center">
       <p>- OR -</p>
