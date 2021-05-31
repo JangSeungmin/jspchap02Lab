@@ -213,7 +213,7 @@
 									</div>
 									<div class="pull-right">
 									<%response.addCookie(Cookies.createCookie("AUTH", "", "/", 0));%>
-										<a href="logout.do" class="btn btn-default btn-flat">Sign
+										<a href="../AdminLTE-2.4.0/logout.do" class="btn btn-default btn-flat">Sign
 											out</a>
 									</div>
 								</li>
@@ -396,6 +396,8 @@
 						</span>
 					</a>
 						<ul class="treeview-menu">
+							<li><a href="list.do"><i class="fa fa-circle-o"></i>
+									게시물</a></li>
 							<li><a href="../examples/list.jsp"><i class="fa fa-circle-o"></i> 
 									방명록</a></li>
 							<li><a href="../examples/blank.jsp"><i
